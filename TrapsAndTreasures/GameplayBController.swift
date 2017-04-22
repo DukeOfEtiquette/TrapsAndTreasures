@@ -10,6 +10,7 @@ import UIKit
 
 
 class GameplayBController: UIViewController {
+    var tile_1: UIImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
