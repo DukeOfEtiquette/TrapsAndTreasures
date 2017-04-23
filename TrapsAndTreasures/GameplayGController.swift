@@ -11,6 +11,8 @@ import UIKit
 
 class GameplayGController: UIViewController {
     
+    @IBOutlet weak var player: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +21,14 @@ class GameplayGController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func changeColor(_ sender: Any) {
+        if player.backgroundColor == UIColor.red {
+            player.backgroundColor = UIColor.blue
+        }
+        else {
+            player.backgroundColor = UIColor.red
+        }
     }
     
 }
