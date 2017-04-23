@@ -22,6 +22,18 @@ extension UIViewController {
 
 class MainScreenController: UIViewController {
     
+    
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var nameInput: UITextField!
+    @IBAction func inputName(sender: UITextField){
+        let name = sender.text!
+        playerName.text = "Hi \(name)!"
+        nameInput.text = ""
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
