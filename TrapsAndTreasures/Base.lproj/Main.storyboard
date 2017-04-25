@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,9 +32,6 @@
                                 <rect key="frame" x="127" y="430" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Explore Adam!"/>
-                                <connections>
-                                    <segue destination="siZ-1J-6cS" kind="show" id="bry-Qr-gHd"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-BS-NVO">
                                 <rect key="frame" x="130" y="503" width="93" height="30"/>
@@ -48,9 +45,6 @@
                                 <rect key="frame" x="127" y="578" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Explore Garrett!"/>
-                                <connections>
-                                    <segue destination="EdD-Bf-Bzk" kind="show" id="eKV-Qu-vbr"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLf-ge-hcS">
                                 <rect key="frame" x="126" y="231" width="110" height="51"/>
@@ -82,64 +76,10 @@
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="138.98050974512745"/>
         </scene>
-        <!--GameplayAController-->
-        <scene sceneID="hBQ-5Y-bwx">
-            <objects>
-                <viewController id="siZ-1J-6cS" userLabel="GameplayAController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dcW-BZ-RNi"/>
-                        <viewControllerLayoutGuide type="bottom" id="SC4-EM-rW1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3FB-lB-aZL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Adam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-ND-cF0">
-                                <rect key="frame" x="152" y="212" width="131" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="165-kX-Itw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="136.28185907046478"/>
-        </scene>
-        <!--GameplayGController-->
-        <scene sceneID="l6p-lf-00n">
-            <objects>
-                <viewController id="EdD-Bf-Bzk" userLabel="GameplayGController" customClass="GameplayGController" customModule="TrapsAndTreasures" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eXP-7t-rgr"/>
-                        <viewControllerLayoutGuide type="bottom" id="aC3-ua-umk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PD6-ai-svt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Garrett" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-E9-NcM">
-                                <rect key="frame" x="131" y="193" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zv-6t-hhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-191.19999999999999" y="1086.2068965517242"/>
-        </scene>
-        <!--GameplayBController-->
+        <!--GameplayController-->
         <scene sceneID="Eba-Sy-mlr">
             <objects>
-                <viewController id="aIK-E9-IqF" userLabel="GameplayBController" customClass="GameplayBController" customModule="TrapsAndTreasures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aIK-E9-IqF" userLabel="GameplayController" customClass="GameplayController" customModule="TrapsAndTreasures" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bft-te-ug5"/>
                         <viewControllerLayoutGuide type="bottom" id="Tb6-Ms-AXZ"/>
@@ -210,7 +150,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="957.57121439280365"/>
+            <point key="canvasLocation" x="862" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bCw-Qc-NRW">

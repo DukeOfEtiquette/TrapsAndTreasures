@@ -11,7 +11,7 @@ import SpriteKit
 
 
 
-class GameplayBController: UIViewController {
+class GameplayController: UIViewController {
     var counter = 0
     var movement = 46
     var traps = 2
