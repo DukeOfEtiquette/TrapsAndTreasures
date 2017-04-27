@@ -11,9 +11,9 @@ class Player{
     private let movePts: Int
     public var traps: [MovementTrap]
     
-    init(){
-        self.name = "Timmy"
-        self.movePts = 42
-        self.traps = []
+    init(name: String, movePts: Int, traps: [MovementTrap]){
+        self.name = name
+        self.movePts = movePts
+        self.traps = traps
     }
 }
