@@ -21,7 +21,7 @@ class Treasure{
         //20% for 3 traps
         //10% for 4 traps
         //5% for 5 traps
-        if roll > 0 && roll < 35{
+        if roll >= 0 && roll < 35{
             self.numTraps = 1
         }else if roll < 65{
             self.numTraps = 2
