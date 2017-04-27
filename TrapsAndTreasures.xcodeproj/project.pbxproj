@@ -15,6 +15,11 @@
 		F28967381EA6C298004CE8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28967361EA6C298004CE8F3 /* LaunchScreen.storyboard */; };
 		F28967421EA96FC0004CE8F3 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28967411EA96FC0004CE8F3 /* MainScreenController.swift */; };
 		F28967461EA97854004CE8F3 /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28967451EA97854004CE8F3 /* GameplayController.swift */; };
+		F2998AFA1EB1AC270052B2BA /* GameWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2998AF91EB1AC270052B2BA /* GameWorld.swift */; };
+		F2998AFC1EB1AC850052B2BA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2998AFB1EB1AC850052B2BA /* Player.swift */; };
+		F2998AFE1EB1AC940052B2BA /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2998AFD1EB1AC940052B2BA /* Tile.swift */; };
+		F2998B001EB1ACA60052B2BA /* Treasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2998AFF1EB1ACA60052B2BA /* Treasure.swift */; };
+		F2998B021EB1ACCB0052B2BA /* MovementTrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2998B011EB1ACCB0052B2BA /* MovementTrap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		F28967391EA6C298004CE8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28967411EA96FC0004CE8F3 /* MainScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
 		F28967451EA97854004CE8F3 /* GameplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
+		F2998AF91EB1AC270052B2BA /* GameWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWorld.swift; sourceTree = "<group>"; };
+		F2998AFB1EB1AC850052B2BA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F2998AFD1EB1AC940052B2BA /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		F2998AFF1EB1ACA60052B2BA /* Treasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Treasure.swift; path = ../Treasure.swift; sourceTree = "<group>"; };
+		F2998B011EB1ACCB0052B2BA /* MovementTrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementTrap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 				F28967391EA6C298004CE8F3 /* Info.plist */,
 				F28967411EA96FC0004CE8F3 /* MainScreenController.swift */,
 				F28967451EA97854004CE8F3 /* GameplayController.swift */,
+				F2998AF91EB1AC270052B2BA /* GameWorld.swift */,
+				F2998AFB1EB1AC850052B2BA /* Player.swift */,
+				F2998AFD1EB1AC940052B2BA /* Tile.swift */,
+				F2998AFF1EB1ACA60052B2BA /* Treasure.swift */,
+				F2998B011EB1ACCB0052B2BA /* MovementTrap.swift */,
 			);
 			path = TrapsAndTreasures;
 			sourceTree = "<group>";
@@ -155,9 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2998AFA1EB1AC270052B2BA /* GameWorld.swift in Sources */,
 				F289672E1EA6C298004CE8F3 /* AppDelegate.swift in Sources */,
 				F28967461EA97854004CE8F3 /* GameplayController.swift in Sources */,
+				F2998AFE1EB1AC940052B2BA /* Tile.swift in Sources */,
+				F2998AFC1EB1AC850052B2BA /* Player.swift in Sources */,
 				F28967421EA96FC0004CE8F3 /* MainScreenController.swift in Sources */,
+				F2998B001EB1ACA60052B2BA /* Treasure.swift in Sources */,
+				F2998B021EB1ACCB0052B2BA /* MovementTrap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
