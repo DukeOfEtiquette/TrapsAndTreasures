@@ -33,4 +33,8 @@ class Treasure{
             self.numTraps = 5
         }
     }
+    
+    init(numTraps: Int){
+        self.numTraps = numTraps
+    }
 }

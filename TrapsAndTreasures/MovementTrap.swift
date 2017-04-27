@@ -30,4 +30,23 @@ class MovementTrap{
         
         self.name += " Movement Trap"
     }
+    
+    //TODO(Adam): Look into the supercede or whatever initializers
+    init(penalty: Int){
+        self.penalty = penalty
+        
+        //Based on the penalty give the trap a unique name
+        switch penalty {
+        case 1:
+            self.name = "Minor"
+        case 2:
+            self.name = "Major"
+        case 3:
+            self.name = "Massive"
+        default:
+            self.name = "Super Dupe Ultra-Secret Rare"
+        }
+        
+        self.name += " Movement Trap"
+    }
 }
