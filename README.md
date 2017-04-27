@@ -5,9 +5,9 @@ Every good repo has a README...and this is ours.
 
 ## Authors
 
-Brad Cook
-Adam DuQuette
-Garrett Genz
+Brad Cook 
+Adam DuQuette 
+Garrett Genz 
 
 
 ## Description
