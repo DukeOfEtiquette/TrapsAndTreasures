@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainScreenController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="MainScreenController" customClass="MainScreenController" customModule="TrapsAndTreasures" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,147 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Traps and Treasures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2B-5d-aJb">
+                                <rect key="frame" x="98" y="153" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLf-ge-hcS">
+                                <rect key="frame" x="126" y="231" width="110" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKP-GG-8Vn">
+                                <rect key="frame" x="126" y="318" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="inputNameWithSender:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Hbu-Hf-nNP"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq6-XO-LJu">
+                                <rect key="frame" x="121" y="502" width="110" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter World!"/>
+                                <connections>
+                                    <segue destination="aIK-E9-IqF" kind="show" id="NO3-IB-k62"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cAI-0Q-S2r"/>
+                    <connections>
+                        <outlet property="nameInput" destination="IKP-GG-8Vn" id="6dY-3J-S75"/>
+                        <outlet property="playerName" destination="NLf-ge-hcS" id="NiE-XW-na4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--GameplayController-->
+        <scene sceneID="Eba-Sy-mlr">
+            <objects>
+                <viewController id="aIK-E9-IqF" userLabel="GameplayController" customClass="GameplayController" customModule="TrapsAndTreasures" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bft-te-ug5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tb6-Ms-AXZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qJX-p3-fIC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="js3-h7-eiB" userLabel="tile_1">
+                                <rect key="frame" x="112" y="72" width="140" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-eu-UTX" userLabel="tile_2">
+                                <rect key="frame" x="112" y="199" width="140" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Znv-C0-2Vu" userLabel="tile_3">
+                                <rect key="frame" x="112" y="335" width="140" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-ZY-cbg" userLabel="tile_4">
+                                <rect key="frame" x="112" y="471" width="140" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Giant.png" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-HC-Zzu">
+                                <rect key="frame" x="135" y="489" width="105" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4B-Oq-pTX">
+                                <rect key="frame" x="27" y="626" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbd-w2-dXp">
+                                <rect key="frame" x="198" y="626" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54874744753740157" green="0.69671980574153514" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X0f-q2-pgR" appends="YES" id="2xa-cq-sx9"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="movementLabel" destination="R4B-Oq-pTX" id="Eb5-j1-CBl"/>
+                        <outlet property="numberOfTraps" destination="Sbd-w2-dXp" id="Akh-bW-bUd"/>
+                        <outlet property="player" destination="XDG-HC-Zzu" id="tgR-RD-fgL"/>
+                        <outlet property="tile_1" destination="js3-h7-eiB" id="Dgt-vm-S4d"/>
+                        <outlet property="tile_2" destination="YTa-eu-UTX" id="xkw-Uj-xlB"/>
+                        <outlet property="tile_3" destination="Znv-C0-2Vu" id="2hZ-hQ-D3N"/>
+                        <outlet property="tile_4" destination="uEA-ZY-cbg" id="U8p-AL-u4R"/>
+                        <outletCollection property="tiles" destination="js3-h7-eiB" collectionClass="NSMutableArray" id="yza-3M-5nf"/>
+                        <outletCollection property="tiles" destination="YTa-eu-UTX" collectionClass="NSMutableArray" id="J9u-Y2-gwf"/>
+                        <outletCollection property="tiles" destination="Znv-C0-2Vu" collectionClass="NSMutableArray" id="MKo-H8-pqE"/>
+                        <outletCollection property="tiles" destination="uEA-ZY-cbg" collectionClass="NSMutableArray" id="j9O-mw-8uK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLK-xZ-DTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X0f-q2-pgR">
+                    <connections>
+                        <action selector="tap:" destination="aIK-E9-IqF" id="W12-s5-mgx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="862" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bCw-Qc-NRW">
+            <objects>
+                <navigationController id="7io-dg-i75" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jem-x7-mX4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2a1-qj-cRt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wln-eo-hpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Giant.png" width="1152" height="1728"/>
+        <image name="blockTile.jpg" width="1024" height="1024"/>
+    </resources>
 </document>

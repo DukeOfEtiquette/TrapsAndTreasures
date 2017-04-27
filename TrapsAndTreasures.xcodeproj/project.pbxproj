@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBC5E1641EABEF5E0079A7CF /* blockTile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBC5E1631EABEF5E0079A7CF /* blockTile.jpg */; };
+		EBC5E1671EABF49F0079A7CF /* Giant.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC5E1661EABF49F0079A7CF /* Giant.png */; };
 		F289672E1EA6C298004CE8F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289672D1EA6C298004CE8F3 /* AppDelegate.swift */; };
-		F28967301EA6C298004CE8F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289672F1EA6C298004CE8F3 /* ViewController.swift */; };
 		F28967331EA6C298004CE8F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28967311EA6C298004CE8F3 /* Main.storyboard */; };
 		F28967351EA6C298004CE8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28967341EA6C298004CE8F3 /* Assets.xcassets */; };
 		F28967381EA6C298004CE8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28967361EA6C298004CE8F3 /* LaunchScreen.storyboard */; };
+		F28967421EA96FC0004CE8F3 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28967411EA96FC0004CE8F3 /* MainScreenController.swift */; };
+		F28967461EA97854004CE8F3 /* GameplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28967451EA97854004CE8F3 /* GameplayController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EBC5E1631EABEF5E0079A7CF /* blockTile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blockTile.jpg; sourceTree = "<group>"; };
+		EBC5E1661EABF49F0079A7CF /* Giant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Giant.png; sourceTree = "<group>"; };
 		F289672A1EA6C298004CE8F3 /* TrapsAndTreasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrapsAndTreasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F289672D1EA6C298004CE8F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F289672F1EA6C298004CE8F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F28967321EA6C298004CE8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F28967341EA6C298004CE8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F28967371EA6C298004CE8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F28967391EA6C298004CE8F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28967411EA96FC0004CE8F3 /* MainScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
+		F28967451EA97854004CE8F3 /* GameplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EBC5E1651EABF0250079A7CF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EBC5E1661EABF49F0079A7CF /* Giant.png */,
+				EBC5E1631EABEF5E0079A7CF /* blockTile.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		F28967211EA6C298004CE8F3 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +69,14 @@
 		F289672C1EA6C298004CE8F3 /* TrapsAndTreasures */ = {
 			isa = PBXGroup;
 			children = (
+				EBC5E1651EABF0250079A7CF /* images */,
 				F289672D1EA6C298004CE8F3 /* AppDelegate.swift */,
-				F289672F1EA6C298004CE8F3 /* ViewController.swift */,
 				F28967311EA6C298004CE8F3 /* Main.storyboard */,
 				F28967341EA6C298004CE8F3 /* Assets.xcassets */,
 				F28967361EA6C298004CE8F3 /* LaunchScreen.storyboard */,
 				F28967391EA6C298004CE8F3 /* Info.plist */,
+				F28967411EA96FC0004CE8F3 /* MainScreenController.swift */,
+				F28967451EA97854004CE8F3 /* GameplayController.swift */,
 			);
 			path = TrapsAndTreasures;
 			sourceTree = "<group>";
@@ -123,7 +140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC5E1671EABF49F0079A7CF /* Giant.png in Resources */,
 				F28967381EA6C298004CE8F3 /* LaunchScreen.storyboard in Resources */,
+				EBC5E1641EABEF5E0079A7CF /* blockTile.jpg in Resources */,
 				F28967351EA6C298004CE8F3 /* Assets.xcassets in Resources */,
 				F28967331EA6C298004CE8F3 /* Main.storyboard in Resources */,
 			);
@@ -136,8 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F28967301EA6C298004CE8F3 /* ViewController.swift in Sources */,
 				F289672E1EA6C298004CE8F3 /* AppDelegate.swift in Sources */,
+				F28967461EA97854004CE8F3 /* GameplayController.swift in Sources */,
+				F28967421EA96FC0004CE8F3 /* MainScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +319,7 @@
 				F289673E1EA6C298004CE8F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
