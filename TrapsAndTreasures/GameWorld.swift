@@ -7,5 +7,16 @@
 //
 
 class GameWorld{
+    private var playerLocation: Tile
+    private var gameTiles: [Tile]
     
+    init(){
+        self.playerLocation = Tile()
+        self.gameTiles = []
+    }
+    
+    init(playerLocation: Tile, gameTiles: [Tile]){
+        self.playerLocation = playerLocation
+        self.gameTiles = gameTiles
+    }
 }
