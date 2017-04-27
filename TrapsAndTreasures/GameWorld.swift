@@ -19,4 +19,17 @@ class GameWorld{
         self.playerLocation = playerLocation
         self.gameTiles = gameTiles
     }
+    
+    public func getPlayerLocation() -> Tile{
+        return self.playerLocation
+    }
+    
+    public func movePlayer(){
+        //TODO(Adam): Define this function
+    }
+    
+    public func isPlayer(onThisTile testTile: Tile) -> Bool{
+        //TODO(Adam): Define this function
+        return true
+    }
 }
