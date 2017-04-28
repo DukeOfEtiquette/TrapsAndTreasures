@@ -21,7 +21,7 @@ class GameWorld{
     }
 
     //Get playerLocation
-    var playerLocation: Int{
+    var getPlayerLocation: Int{
         return self.playerLocation
     }
 
