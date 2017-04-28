@@ -21,6 +21,11 @@ class MovementTrap{
         self.quantity = 0
     }
 
+    //Get the value of the movement penalty associated with this trap
+    var movePenalty: Int{
+        return self.penalty
+    }
+
     //Get number of traps available
     var numberOfTraps: Int {
         return self.quantity

@@ -8,8 +8,10 @@
 
 import Foundation
 
+//This class will randomly generate a number of traps it will reward a player instead
+//of holding N different trap objects waiting for a player to interact with it
 class Treasure{
-    public let numTraps: Int
+    private let numTraps: Int
     
     init(){
         //Generate a percent
@@ -36,5 +38,10 @@ class Treasure{
     
     init(numTraps: Int){
         self.numTraps = numTraps
+    }
+
+    //Return the number of traps associated with this Treasure
+    var numberOfTraps: Int{
+        return self.numTraps
     }
 }

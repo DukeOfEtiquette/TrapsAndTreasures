@@ -35,6 +35,6 @@ class Player{
     
     //A number of traps passed to function
     public func addTraps(numberToAdd: Int){
-        self.traps += trapsToAdd
+        self.traps.increaseTrapQuantity(numToInc: numberToAdd)
     }
 }
