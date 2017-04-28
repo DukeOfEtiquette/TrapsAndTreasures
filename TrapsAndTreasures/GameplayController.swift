@@ -65,11 +65,11 @@ class GameplayController: UIViewController {
                     i = 4
                 }
             }
+            i = counter
             counter += 1
             if counter > 4 {
                 counter = 0
             }
-            i = counter
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
         }
