@@ -9,30 +9,32 @@
 class Player{
     public let name: String
     private var movePts: Int
-    public var traps: [MovementTrap]
+    public var traps: MovementTrap
     
-    init(name: String, movePts: Int, traps: [MovementTrap]){
+    init(name: String, movePts: Int){
         self.name = name
         self.movePts = movePts
-        self.traps = traps
+        self.traps = MovementTrap()
     }
-    
-    //TODO(Adam): Might be better off as a computed value
-    public func getMovePts() -> Int{
+
+    //Get number of movement points a player has
+    var numberOfMovePts: Int {
         return self.movePts
     }
+
+    //Get number of traps a player has
+    var numberOfMovementTraps: Int {
+        return self.traps.numberOfTraps
+    }
     
+    //Add movementpoints to player equal to value passed
+    //Since the parameter is unsigned this can be used to decrease as well
     public func addMovePts(pointsToAdd: Int){
         self.movePts += pointsToAdd
     }
     
-    
-    //TODO(Adam): Might be better off as a computed value
-    public func getTrapCount() -> Int{
-        return self.traps.count
-    }
-    
-    public func addTraps(trapsToAdd: [MovementTrap]){
+    //A number of traps passed to function
+    public func addTraps(numberToAdd: Int){
         self.traps += trapsToAdd
     }
 }
