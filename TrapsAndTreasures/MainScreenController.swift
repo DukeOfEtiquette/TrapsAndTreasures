@@ -8,29 +8,16 @@
 
 import UIKit
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-class MainScreenController: UIViewController {
+class MainScreenController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var nameInput: UITextField!
+    
     @IBAction func inputName(sender: UITextField){
         let name = sender.text!
         playerName.text = "Hi \(name)!"
         nameInput.text = ""
-        
-        
     }
     
     
@@ -38,12 +25,18 @@ class MainScreenController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.hideKeyboardWhenTappedAround()
+        // Need to understand more about "delegates" to understand what this is doing
+        nameInput.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
