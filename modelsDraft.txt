@@ -1,0 +1,130 @@
+### General ###
+
+Each class is represented by a main title, and each has a subtitle for the properties and methods.
+
+My note taking key:
+
+### MainTitle ###
+
+- Points related to MainTitle
+
+### SubTitle
+
+- Points related to SubTitle
+
+//This is a comment
+
+
+
+
+### GameWorld ###
+
+### Properties
+
+//This will store the tile the player is on
+private playerLoc: Tile
+
+//This will store all tiles in the game world
+private tiles: [Tile]
+
+### Methods
+
+//This will return what tile the player is currently on
+public getPlayerLocation() -> Tile
+
+//For now we can have this just move the player "up" and eventually modify
+//it to take a tile and the game moves the player to that specific tile
+public movePlayer()
+
+//This will receive a tile and see if it matches playerLoc, if yes then will return true else false
+public isPlayer(onThisTile: Tile) -> Bool
+
+
+### MovementTrap ###
+
+### Properties
+
+//This will have the name format "Minor/Major/Massive Movement Trap" where minor==1, major==2, and
+//massive==3 penalty to movePts
+public name: String
+
+//The penalty applied to the player who sets of the trap
+public penalty: Int
+
+
+### Mehtods
+
+//The standard init will create a trap object with a random penalty value
+init()
+
+//This init will be provided a specific penalty value, any value < 1 set to 1, any value > 3 set to 3
+init(penalty: Int)
+
+
+### Treasure ###
+
+### Properties
+
+//When a Treasure object is created the numTraps value will be randomly set, 1-5 with scaling probability
+//I'm thinking 35% for 1, 30% for 2, 20% for 3, 10% for 3, 5% for 5
+public numTraps: Int
+
+### Methods
+
+- N/A
+
+
+### Player ###
+
+### Properties
+
+//Holds the player's name
+public name: String
+
+//Holds how many movePts the player has
+private movePts: Int
+
+//This will be a dictionary that holds a trap and the number of traps that player has of that type
+//Since not all trap is created equal, a player could have multiples of the same trap
+//and instead of storing each one we just store the trap and how many that person has
+//
+//Example: A player starts with no traps. They find a treasure chest with a -1 trap. We add that -1 trap to
+//the dictionary and set the value to 1. They find another treasure with another -1 trap. Instead of making
+//an entirely new object identical to the other one, we just increase the value to 2. That way the player
+//is only carrying around one trap object and a small int instead of two traps which eventually could increase in
+//size.
+public trap: [Trap, Int]
+
+
+### Methods
+
+//I assume we want movePts private so we need a getter
+public getMovePts() -> Int
+
+//Need a function to modify move points, since it takes an int we can use to dec as well
+public addMovePts(pointsToAdd: Int)
+
+//This function takes a trap and returns if a player has any of that variety
+public getTrapCount(trapToCount: Trap) -> Int
+
+//This function adds traps to the player. If that type of trap is already in the dictionary then it just
+//incrases the value in the dictionary for that trap
+public addTrap(trapsToAdd: [Trap])
+
+
+### Tile ###
+
+### Properties
+
+//This is an optional because a Treasure/Tile could be on a tile or not
+public treasure: Treasure?
+public trap: Trap?
+
+### Methods
+
+//This function will return an array of Trap objects based on numTraps in it's Treasure object, if one exists
+public giveTreasure() -> [Trap]
+
+//This will return the penalty value of the trap on this tile, which the player will apply to it's movement
+//ie player.addMovePts(pointsToAdd: self.triggerTrap()) something like that
+public triggerTrap() -> Int

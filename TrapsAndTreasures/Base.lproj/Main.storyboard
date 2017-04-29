@@ -78,24 +78,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="js3-h7-eiB" userLabel="tile_1">
-                                <rect key="frame" x="112" y="72" width="140" height="119"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="js3-h7-eiB" userLabel="tile_1">
+                                <rect key="frame" x="112" y="244" width="105" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-eu-UTX" userLabel="tile_2">
-                                <rect key="frame" x="112" y="199" width="140" height="128"/>
+                                <rect key="frame" x="112" y="317" width="105" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Znv-C0-2Vu" userLabel="tile_3">
-                                <rect key="frame" x="112" y="335" width="140" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Znv-C0-2Vu" userLabel="tile_3">
+                                <rect key="frame" x="112" y="390" width="105" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-ZY-cbg" userLabel="tile_4">
-                                <rect key="frame" x="112" y="471" width="140" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uEA-ZY-cbg" userLabel="tile_4">
+                                <rect key="frame" x="112" y="463" width="105" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Giant.png" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-HC-Zzu">
-                                <rect key="frame" x="135" y="489" width="105" height="92"/>
+                                <rect key="frame" x="126" y="317" width="81" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4B-Oq-pTX">
@@ -112,17 +112,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oC0-z7-jl3">
+                                <rect key="frame" x="112" y="171" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWV-23-eMM">
+                                <rect key="frame" x="198" y="542" width="95" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Down">
+                                    <color key="titleShadowColor" red="0.11576082323801284" green="0.17303070704335999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveDown:" destination="aIK-E9-IqF" eventType="touchUpInside" id="WPd-oy-iFx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-OI-G1U">
+                                <rect key="frame" x="27" y="542" width="95" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Up">
+                                    <color key="titleShadowColor" red="0.11576082323801284" green="0.17303070704335999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveUp:" destination="aIK-E9-IqF" eventType="touchUpInside" id="Jho-4d-MRg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.54874744753740157" green="0.69671980574153514" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="X0f-q2-pgR" appends="YES" id="2xa-cq-sx9"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="movementLabel" destination="R4B-Oq-pTX" id="Eb5-j1-CBl"/>
                         <outlet property="numberOfTraps" destination="Sbd-w2-dXp" id="Akh-bW-bUd"/>
-                        <outlet property="player" destination="XDG-HC-Zzu" id="tgR-RD-fgL"/>
+                        <outlet property="player" destination="XDG-HC-Zzu" id="gAv-Ow-aKa"/>
                         <outlet property="tile_1" destination="js3-h7-eiB" id="Dgt-vm-S4d"/>
                         <outlet property="tile_2" destination="YTa-eu-UTX" id="xkw-Uj-xlB"/>
                         <outlet property="tile_3" destination="Znv-C0-2Vu" id="2hZ-hQ-D3N"/>
@@ -131,16 +154,12 @@
                         <outletCollection property="tiles" destination="YTa-eu-UTX" collectionClass="NSMutableArray" id="J9u-Y2-gwf"/>
                         <outletCollection property="tiles" destination="Znv-C0-2Vu" collectionClass="NSMutableArray" id="MKo-H8-pqE"/>
                         <outletCollection property="tiles" destination="uEA-ZY-cbg" collectionClass="NSMutableArray" id="j9O-mw-8uK"/>
+                        <outletCollection property="tiles" destination="oC0-z7-jl3" collectionClass="NSMutableArray" id="Gqe-R3-5wc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLK-xZ-DTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="X0f-q2-pgR">
-                    <connections>
-                        <action selector="tap:" destination="aIK-E9-IqF" id="W12-s5-mgx"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="862" y="139"/>
+            <point key="canvasLocation" x="861.60000000000002" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bCw-Qc-NRW">
@@ -162,5 +181,9 @@
     <resources>
         <image name="Giant.png" width="1152" height="1728"/>
         <image name="blockTile.jpg" width="1024" height="1024"/>
+        <image name="blockTile2.jpg" width="1024" height="1024"/>
+        <image name="blockTile3.jpg" width="1024" height="1024"/>
+        <image name="blockTile4.jpg" width="1024" height="1024"/>
+        <image name="blockTile5.jpg" width="1024" height="1024"/>
     </resources>
 </document>
