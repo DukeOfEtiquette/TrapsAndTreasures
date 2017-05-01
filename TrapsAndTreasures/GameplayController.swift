@@ -69,7 +69,10 @@ class GameplayController: UIViewController {
             i = counter
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
+            setRandomTreasure()
 
+        }else{
+            noMovementPointsAlert()
         }
         
         //Update how many movement points are left
@@ -106,6 +109,9 @@ class GameplayController: UIViewController {
             i = counter
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
+            setRandomTreasure()
+        }else{
+            noMovementPointsAlert()
         }
         
         //Update how many movement points are left
@@ -119,7 +125,24 @@ class GameplayController: UIViewController {
         defaults.synchronize()
     }
   
+    func setRandomTreasure(){
+        
+        let roll = Int(arc4random_uniform(UInt32(100)))
+        if(roll < 5)
+        {
+            alertMessage(title: "Treasure!", message: "A new treasure has randomly been placed on the map!")
+        }
+    }
     
+    func noMovementPointsAlert(){
+        alertMessage(title: "No Movement", message: "You have no more movement points left! Get up and go for a walk to gain more!")
+    }
+    
+    func alertMessage(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
