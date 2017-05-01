@@ -33,6 +33,11 @@ class GameplayController: UIViewController {
     @IBOutlet weak var movementLabel: UILabel!
     @IBOutlet weak var numberOfTraps: UILabel!
     
+    @IBAction func increaseMovement(_ sender: Any) {
+        movement += 10
+        self.movementLabel.text = "Moves Left: \(movement)"
+        saveMovementPoints()
+    }
     
     @IBAction func moveDown(_ sender: Any) {
         
@@ -119,7 +124,7 @@ class GameplayController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.movementLabel.text = "Moves Left:\(movement)"
+        self.movementLabel.text = "Moves Left: \(movement)"
         self.numberOfTraps.text = "traps: \(traps)"
         imageHolder.append(UIImage(named: "blockTile.jpg")!)
         imageHolder.append(UIImage(named: "blockTile2.jpg")!)

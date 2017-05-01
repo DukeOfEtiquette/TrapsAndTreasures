@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -138,9 +139,20 @@
                                     <action selector="moveUp:" destination="aIK-E9-IqF" eventType="touchUpInside" id="Jho-4d-MRg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYC-xq-RlZ">
+                                <rect key="frame" x="309" y="617" width="46" height="30"/>
+                                <state key="normal" title="IncMv"/>
+                                <connections>
+                                    <action selector="increaseMovement:" destination="aIK-E9-IqF" eventType="touchUpInside" id="XLW-f5-gYO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.54874744753740157" green="0.69671980574153514" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Tb6-Ms-AXZ" firstAttribute="top" secondItem="nYC-xq-RlZ" secondAttribute="bottom" constant="20" id="dr2-sg-vdf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nYC-xq-RlZ" secondAttribute="trailing" constant="4" id="v3y-C6-A5P"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="movementLabel" destination="R4B-Oq-pTX" id="Eb5-j1-CBl"/>
