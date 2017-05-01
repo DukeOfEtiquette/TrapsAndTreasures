@@ -16,6 +16,9 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
     
     // Key used to access playerName in the plist
     let playerNameKey = "playerName"
+    let movementPointsKey = "movePts"
+    
+    var playerMovementPoints: Int?
     
     @IBAction func inputName(sender: UITextField){
         let name = sender.text!
@@ -27,8 +30,9 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Load name from plist if it exists
+        // Load name and movement points from plist if it exists
         loadPlayerName()
+        loadMovementPoints()
         
         // Need to understand more about "delegates" to understand what this is doing
         nameInput.delegate = self
@@ -64,6 +68,18 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
         let defaults = UserDefaults.standard
         defaults.set(name, forKey: playerNameKey)
         defaults.synchronize()
+    }
+    
+    func loadMovementPoints() {
+        if let movementPoints = UserDefaults.standard.object(forKey: movementPointsKey) as? Int{
+            playerMovementPoints = movementPoints
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gameController = segue.destination as? GameplayController {
+            gameController.movement = playerMovementPoints!
+        }
     }
     
 }

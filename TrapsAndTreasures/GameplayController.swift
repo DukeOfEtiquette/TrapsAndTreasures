@@ -14,7 +14,7 @@ import SpriteKit
 class GameplayController: UIViewController {
     var counter = 0
     var i = 0
-    var movement = 46
+    public var movement = 0
     var traps = 2
     var firstMoveCommpensation = false
     var imageHolder = [UIImage]()
@@ -66,6 +66,9 @@ class GameplayController: UIViewController {
             self.movementLabel.text = "Moves Left: \(movement)"
 
         }
+        
+        //Update how many movement points are left
+        saveMovementPoints()
 
     }
     
@@ -99,7 +102,16 @@ class GameplayController: UIViewController {
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
         }
+        
+        //Update how many movement points are left
+        saveMovementPoints()
 
+    }
+    
+    func saveMovementPoints() {
+        let defaults = UserDefaults.standard
+        defaults.set(movement, forKey: "movePts")
+        defaults.synchronize()
     }
   
     
