@@ -14,10 +14,11 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var nameInput: UITextField!
     
-    // Key used to access playerName in the plist
+    // Key used to access playerName and movePts in the plist
     let playerNameKey = "playerName"
     let movementPointsKey = "movePts"
     
+    //Temp variable to hold the player's movement points until the segue is initiated
     var playerMovementPoints: Int?
     
     @IBAction func inputName(sender: UITextField){
@@ -70,12 +71,14 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
         defaults.synchronize()
     }
     
+    //Grab the movement points out of userdefaults
     func loadMovementPoints() {
         if let movementPoints = UserDefaults.standard.object(forKey: movementPointsKey) as? Int{
             playerMovementPoints = movementPoints
         }
     }
     
+    //Send any data we'd like from here to the gameplay controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gameController = segue.destination as? GameplayController {
             gameController.movement = playerMovementPoints!

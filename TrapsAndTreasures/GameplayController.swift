@@ -69,9 +69,12 @@ class GameplayController: UIViewController {
             i = counter
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
+            
+            //Try to set a random treasure
             setRandomTreasure()
 
         }else{
+            //Advise the player they have no more movement points
             noMovementPointsAlert()
         }
         
@@ -109,8 +112,11 @@ class GameplayController: UIViewController {
             i = counter
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
+            
+            //Try to set a random treasure
             setRandomTreasure()
         }else{
+            //Advise the user they have no more movement points
             noMovementPointsAlert()
         }
         
@@ -127,6 +133,7 @@ class GameplayController: UIViewController {
   
     func setRandomTreasure(){
         
+        //5% chance to set a treasure on the map randomly
         let roll = Int(arc4random_uniform(UInt32(100)))
         if(roll < 5)
         {
@@ -134,6 +141,8 @@ class GameplayController: UIViewController {
         }
     }
     
+    //Generic alert message function so we don't have to reqrite the same three lines of code
+    //every time we want to make an alert
     func noMovementPointsAlert(){
         alertMessage(title: "No Movement", message: "You have no more movement points left! Get up and go for a walk to gain more!")
     }
