@@ -75,6 +75,8 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
     func loadMovementPoints() {
         if let movementPoints = UserDefaults.standard.object(forKey: movementPointsKey) as? Int{
             playerMovementPoints = movementPoints
+        } else {
+            playerMovementPoints = 10
         }
     }
     
