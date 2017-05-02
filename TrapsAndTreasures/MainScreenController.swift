@@ -31,12 +31,16 @@ class MainScreenController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Load name and movement points from plist if it exists
+        // Load name points from plist if it exists
         loadPlayerName()
-        loadMovementPoints()
         
         // Need to understand more about "delegates" to understand what this is doing
         nameInput.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Load movement points
+        loadMovementPoints()
     }
     
     override func didReceiveMemoryWarning() {
