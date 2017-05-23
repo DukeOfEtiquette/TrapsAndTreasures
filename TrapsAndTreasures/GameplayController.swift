@@ -9,6 +9,16 @@
 import UIKit
 import SpriteKit
 
+import PusherSwift
+
+let options = PusherClientOptions(
+    host: .cluster("us2")
+)
+
+let pusher = Pusher(
+    key: "338b7804d638b00a56a2",
+    options: options
+)
 
 
 class GameplayController: UIViewController {
@@ -163,6 +173,19 @@ class GameplayController: UIViewController {
         imageHolder.append(UIImage(named: "blockTile3.jpg")!)
         imageHolder.append(UIImage(named: "blockTile4.jpg")!)
         imageHolder.append(UIImage(named: "blockTile5.jpg")!)
+        
+        // subscribe to channel and bind to event
+        let channel = pusher.subscribe("my-channel")
+        
+        let _ = channel.bind(eventName: "Trap_11", callback: { (data: Any?) -> Void in
+            if let data = data as? [String : AnyObject] {
+                if let message = data["message"] as? String {
+                    print(message)
+                }
+            }
+        })
+        
+        pusher.connect()
     }
     
     override func didReceiveMemoryWarning() {
