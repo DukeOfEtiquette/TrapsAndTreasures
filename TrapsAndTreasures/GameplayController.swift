@@ -185,6 +185,25 @@ class GameplayController: UIViewController {
             }
         })
         
+        /*
+        let _ = channel.bind(eventName: "player-move", callback: { (data: Any?) -> Void in
+            if let data = data as? [String : AnyObject] {
+                if let new_location = data["new_location"] as? String, let player_id = data["player_id"] as? String {
+                    self.loc_labal.text = new_location
+                    
+                    let lowLocation = self.playerLocation - self.fogOfWar
+                    let highLocation = self.playerLocation + self.fogOfWar
+                    let newLocation = Int(new_location)!
+                    
+                    
+                    if(newLocation >= lowLocation && newLocation <= highLocation)
+                    {
+                        self.my_label.text = player_id
+                    }
+                }
+            }
+        })*/
+        
         pusher.connect()
     }
     
