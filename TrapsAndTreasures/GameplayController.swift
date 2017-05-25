@@ -75,15 +75,28 @@ class GameplayController: UIViewController {
                     i = 0
                 }
             }
+            
+            var enemyPosition = otherPlayer - playerLocation + 2
+            print("enemyPos: \(enemyPosition)")
+            if enemyPosition < 0 {
+                enemyPosition = 4
+            }
+            
+            if enemyPosition < 5 && enemyPosition >= 0{
+                otherPlayers?[enemyPosition].image = nil
+            }
+            
             //reset i back to its initial position + 1
             playerLocation += 1
             if playerLocation > tileCount  {
                 playerLocation = 0
             }
             i = playerLocation
-            var tileOffset:Int
-            
-            tileOffset = playerLocation - otherPlayer + 2
+            //var tileOffset:Int
+            enemyPosition -= 1
+            if enemyPosition < 0 {
+                enemyPosition = 4
+            }
 //            if otherPlayer > playerLocation{
 //                tileOffset = otherPlayer - playerLocation + 2
 //            }
@@ -93,16 +106,17 @@ class GameplayController: UIViewController {
 //                tileOffset = 2
 //            }
         
-            for player in otherPlayers!{
-                player.image = nil
+            //for player in otherPlayers!{
+              //  player.image = nil
                
-            }
-            print(tileOffset)
-            print(otherPlayer)
-            print(playerLocation)
+            //}
             
-            if 0 < tileOffset && tileOffset < 5{
-                otherPlayers?[tileOffset].image = UIImage(named: "Giant.png")
+            print(enemyPosition)
+           // print(otherPlayer)
+            //print(playerLocation)
+            
+            if 0 <= enemyPosition && enemyPosition < 5{
+                otherPlayers?[enemyPosition].image = UIImage(named: "Giant.png")
             }
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
@@ -112,7 +126,7 @@ class GameplayController: UIViewController {
 
         }else{
             //Advise the player they have no more movement points
-            noMovementPointsAlert()
+            //noMovementPointsAlert()
         }
         
         //Update how many movement points are left
