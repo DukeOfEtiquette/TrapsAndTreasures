@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7io-dg-i75">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,6 +79,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oC0-z7-jl3">
+                                <rect key="frame" x="112" y="171" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="js3-h7-eiB" userLabel="tile_1">
                                 <rect key="frame" x="112" y="244" width="105" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -113,10 +117,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blockTile4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oC0-z7-jl3">
-                                <rect key="frame" x="112" y="171" width="105" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWV-23-eMM">
                                 <rect key="frame" x="198" y="542" width="95" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,6 +146,26 @@
                                     <action selector="increaseMovement:" destination="aIK-E9-IqF" eventType="touchUpInside" id="XLW-f5-gYO"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-SO-mCh">
+                                <rect key="frame" x="112" y="171" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-Jo-geM">
+                                <rect key="frame" x="112" y="244" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Znl-Gw-2qh">
+                                <rect key="frame" x="112" y="317" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-yK-YB2">
+                                <rect key="frame" x="112" y="390" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W13-f4-wey">
+                                <rect key="frame" x="112" y="463" width="105" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.54874744753740157" green="0.69671980574153514" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -167,6 +187,11 @@
                         <outletCollection property="tiles" destination="Znv-C0-2Vu" collectionClass="NSMutableArray" id="MKo-H8-pqE"/>
                         <outletCollection property="tiles" destination="uEA-ZY-cbg" collectionClass="NSMutableArray" id="j9O-mw-8uK"/>
                         <outletCollection property="tiles" destination="oC0-z7-jl3" collectionClass="NSMutableArray" id="Gqe-R3-5wc"/>
+                        <outletCollection property="otherPlayers" destination="oyh-SO-mCh" collectionClass="NSMutableArray" id="bFD-g8-Bc6"/>
+                        <outletCollection property="otherPlayers" destination="TvF-Jo-geM" collectionClass="NSMutableArray" id="gNh-mv-t5E"/>
+                        <outletCollection property="otherPlayers" destination="Znl-Gw-2qh" collectionClass="NSMutableArray" id="NCp-7R-1wX"/>
+                        <outletCollection property="otherPlayers" destination="GQj-yK-YB2" collectionClass="NSMutableArray" id="jDz-eC-B2K"/>
+                        <outletCollection property="otherPlayers" destination="W13-f4-wey" collectionClass="NSMutableArray" id="Fb9-dj-o6o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLK-xZ-DTe" userLabel="First Responder" sceneMemberID="firstResponder"/>

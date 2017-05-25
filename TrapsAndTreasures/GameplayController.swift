@@ -22,23 +22,26 @@ let pusher = Pusher(
 
 
 class GameplayController: UIViewController {
-    var counter = 0
+    var playerLocation = 0
+    var otherPlayer = 1;
     var i = 0
     public var movement = 0
     var traps = 2
     var firstMoveCommpensation = false
     var imageHolder = [UIImage]()
+
     
     let image1 = UIImage(named: "blockTile.jpg")!
     
     @IBOutlet var tiles: Array<UIImageView>?
-    
+    @IBOutlet var otherPlayers: Array<UIImageView>?
+        
     @IBOutlet weak var tile_1: UIImageView!
     @IBOutlet weak var tile_2: UIImageView!
     @IBOutlet weak var tile_3: UIImageView!
     @IBOutlet weak var tile_4: UIImageView!
     @IBOutlet weak var player: UIImageView!
-    
+    //player location is tile 3
     
     @IBOutlet weak var movementLabel: UILabel!
     @IBOutlet weak var numberOfTraps: UILabel!
@@ -50,7 +53,8 @@ class GameplayController: UIViewController {
     }
     
     @IBAction func moveDown(_ sender: Any) {
-        
+        let tileCount = (tiles?.count)! - 1
+
         if movement > 0{
             //adjust the image forward by one
             i += 1
@@ -60,28 +64,51 @@ class GameplayController: UIViewController {
                 firstMoveCommpensation = true
             }
             //if i is pointing past the last image in the array reset back to begining
-            if i > 4 {
+            if i > (tiles?.count)! - 1{
                 i = 0
             }
             //itterate through the tiles assigning the images to the tiles
             for tile in tiles!{
                 tile.image = imageHolder[i]
                 i += 1
-                if i > 4{
+                if i > tileCount{
                     i = 0
                 }
             }
             //reset i back to its initial position + 1
-            counter += 1
-            if counter >= 5 {
-                counter = 0
+            playerLocation += 1
+            if playerLocation > tileCount  {
+                playerLocation = 0
             }
-            i = counter
+            i = playerLocation
+            var tileOffset:Int
+            
+            tileOffset = playerLocation - otherPlayer + 2
+//            if otherPlayer > playerLocation{
+//                tileOffset = otherPlayer - playerLocation + 2
+//            }
+//            else if otherPlayer < playerLocation {
+//                tileOffset = playerLocation - otherPlayer + 2
+//            } else{
+//                tileOffset = 2
+//            }
+        
+            for player in otherPlayers!{
+                player.image = nil
+               
+            }
+            print(tileOffset)
+            print(otherPlayer)
+            print(playerLocation)
+            
+            if 0 < tileOffset && tileOffset < 5{
+                otherPlayers?[tileOffset].image = UIImage(named: "Giant.png")
+            }
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
             
             //Try to set a random treasure
-            setRandomTreasure()
+          //  setRandomTreasure()
 
         }else{
             //Advise the player they have no more movement points
@@ -95,16 +122,18 @@ class GameplayController: UIViewController {
     
     
     @IBAction func moveUp(_ sender: Any) {
+        let tileCount = (tiles?.count)! - 1
+
         if movement > 0{
             i -= 1
             
             if firstMoveCommpensation  == false{
-                i = 3
-                counter = 4
+                i = tileCount - 1
+                playerLocation = tileCount
                 firstMoveCommpensation = true
             }
             if i < 0{
-                i = 4
+                i = tileCount
             }
             for tile in tiles!{
                 tile.image = imageHolder[i]
@@ -114,12 +143,12 @@ class GameplayController: UIViewController {
                 }
             }
     
-            counter -= 1
+            playerLocation -= 1
             
-            if counter < 0 {
-                counter = 4
+            if playerLocation < 0 {
+                playerLocation = tileCount
             }
-            i = counter
+            i = playerLocation
             movement -= 1
             self.movementLabel.text = "Moves Left: \(movement)"
             
