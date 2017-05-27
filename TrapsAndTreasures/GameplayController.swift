@@ -22,17 +22,21 @@ let pusher = Pusher(
 
 
 class GameplayController: UIViewController {
+     //temp placeholders
     var playerLocation = 0
     var otherPlayer = 1
     var secondPlayer = 2
     var otherPlayerName = "Jeff"
     var secondPlayerName = "Bill"
+    
     var i = 0
     public var movement = 0
     var traps = 2
     var firstMoveCommpensation = false
     var imageHolder = [UIImage]()
     var otherPlayerPositions: [String: Int] = [:]
+    let playerMovedUp = 0
+    let playerMovedDown = 1
 
     
     let image1 = UIImage(named: "blockTile.jpg")!
@@ -57,7 +61,7 @@ class GameplayController: UIViewController {
     }
     
     @IBAction func moveDown(_ sender: Any) {
-        draw(playerMovedUp: false)
+        draw(playerMovement: playerMovedDown)
        
         
         //Update how many movement points are left
@@ -67,7 +71,7 @@ class GameplayController: UIViewController {
     
     
     @IBAction func moveUp(_ sender: Any) {
-        draw(playerMovedUp: true)
+        draw(playerMovement: playerMovedUp)
     }
     
     func saveMovementPoints() {
@@ -97,14 +101,17 @@ class GameplayController: UIViewController {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    func draw(playerMovedUp: Bool){
+    func draw(playerMovement:Int){
         let tileCount = (tiles?.count)! - 1
         
         if movement > 0{
-            if !playerMovedUp{
+            if playerMovement == playerMovedDown{
                 movedDown(tileCount: tileCount)
-            } else{
+            }
+            else if playerMovement == playerMovedUp{
                 movedUp(tileCount: tileCount)
+            } else{
+                
             }
             adjustOtherPlayersPosition(tileCount: tileCount)
 
