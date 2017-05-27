@@ -53,81 +53,8 @@ class GameplayController: UIViewController {
     }
     
     @IBAction func moveDown(_ sender: Any) {
-        let tileCount = (tiles?.count)! - 1
-
-        if movement > 0{
-            //adjust the image forward by one
-            i += 1
-            //because of initial image configuration have to adjust the first move
-            if firstMoveCommpensation  == false{
-                i = 0
-                firstMoveCommpensation = true
-            }
-            //if i is pointing past the last image in the array reset back to begining
-            if i > (tiles?.count)! - 1{
-                i = 0
-            }
-            //itterate through the tiles assigning the images to the tiles
-            for tile in tiles!{
-                tile.image = imageHolder[i]
-                i += 1
-                if i > tileCount{
-                    i = 0
-                }
-            }
-            
-            var enemyPosition = otherPlayer - playerLocation + 2
-            print("enemyPos: \(enemyPosition)")
-            if enemyPosition < 0 {
-                enemyPosition = 4
-            }
-            
-            if enemyPosition < 5 && enemyPosition >= 0{
-                otherPlayers?[enemyPosition].image = nil
-            }
-            
-            //reset i back to its initial position + 1
-            playerLocation += 1
-            if playerLocation > tileCount  {
-                playerLocation = 0
-            }
-            i = playerLocation
-            //var tileOffset:Int
-            enemyPosition -= 1
-            if enemyPosition < 0 {
-                enemyPosition = 4
-            }
-//            if otherPlayer > playerLocation{
-//                tileOffset = otherPlayer - playerLocation + 2
-//            }
-//            else if otherPlayer < playerLocation {
-//                tileOffset = playerLocation - otherPlayer + 2
-//            } else{
-//                tileOffset = 2
-//            }
-        
-            //for player in otherPlayers!{
-              //  player.image = nil
-               
-            //}
-            
-            print(enemyPosition)
-           // print(otherPlayer)
-            //print(playerLocation)
-            
-            if 0 <= enemyPosition && enemyPosition < 5{
-                otherPlayers?[enemyPosition].image = UIImage(named: "Giant.png")
-            }
-            movement -= 1
-            self.movementLabel.text = "Moves Left: \(movement)"
-            
-            //Try to set a random treasure
-          //  setRandomTreasure()
-
-        }else{
-            //Advise the player they have no more movement points
-            //noMovementPointsAlert()
-        }
+        draw(playerMovedUp: false)
+       
         
         //Update how many movement points are left
         saveMovementPoints()
@@ -136,46 +63,7 @@ class GameplayController: UIViewController {
     
     
     @IBAction func moveUp(_ sender: Any) {
-        let tileCount = (tiles?.count)! - 1
-
-        if movement > 0{
-            i -= 1
-            
-            if firstMoveCommpensation  == false{
-                i = tileCount - 1
-                playerLocation = tileCount
-                firstMoveCommpensation = true
-            }
-            if i < 0{
-                i = tileCount
-            }
-            for tile in tiles!{
-                tile.image = imageHolder[i]
-                i += 1
-                if i > 4 {
-                    i = 0
-                }
-            }
-    
-            playerLocation -= 1
-            
-            if playerLocation < 0 {
-                playerLocation = tileCount
-            }
-            i = playerLocation
-            movement -= 1
-            self.movementLabel.text = "Moves Left: \(movement)"
-            
-            //Try to set a random treasure
-            setRandomTreasure()
-        }else{
-            //Advise the user they have no more movement points
-            noMovementPointsAlert()
-        }
-        
-        //Update how many movement points are left
-        saveMovementPoints()
-
+        draw(playerMovedUp: true)
     }
     
     func saveMovementPoints() {
@@ -204,6 +92,130 @@ class GameplayController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    func draw(playerMovedUp: Bool){
+        let tileCount = (tiles?.count)! - 1
+        
+        if movement > 0{
+            if !playerMovedUp{
+                movedDown(tileCount: tileCount)
+            } else{
+                movedUp(tileCount: tileCount)
+            }
+            adjustOtherPlayersPosition(tileCount: tileCount)
+
+            movement -= 1
+            self.movementLabel.text = "Moves Left: \(movement)"
+            
+            //Try to set a random treasure
+            //  setRandomTreasure()
+            //Update how many movement points are left
+            saveMovementPoints()
+            
+        } else{
+            noMovementPointsAlert()
+        }
+        
+    }
+    
+    func movedDown(tileCount: Int){
+        //adjust the image forward by one
+        i += 1
+        //because of initial image configuration have to adjust the first move
+        if firstMoveCommpensation  == false{
+            i = 0
+            firstMoveCommpensation = true
+        }
+        //if i is pointing past the last image in the array reset back to begining
+        if i > (tiles?.count)! - 1{
+            i = 0
+        }
+        //itterate through the tiles assigning the images to the tiles
+        for tile in tiles!{
+            tile.image = imageHolder[i]
+            i += 1
+            if i > tileCount{
+                i = 0
+            }
+        }
+        playerLocation += 1
+        if playerLocation > tileCount  {
+            playerLocation = 0
+        }
+        i = playerLocation
+
+    }
+    func movedUp(tileCount:Int){
+        i -= 1
+        
+        if firstMoveCommpensation  == false{
+            i = tileCount - 1
+            playerLocation = tileCount
+            firstMoveCommpensation = true
+        }
+        if i < 0{
+            i = tileCount
+        }
+        for tile in tiles!{
+            tile.image = imageHolder[i]
+            i += 1
+            if i > 4 {
+                i = 0
+            }
+        }
+        
+        playerLocation -= 1
+        
+        if playerLocation < 0 {
+            playerLocation = tileCount
+        }
+        i = playerLocation
+        movement -= 1
+    }
+    func adjustOtherPlayersPosition(tileCount: Int){
+        var enemyPosition = otherPlayer - playerLocation + 2
+        //            print("enemyPos: \(enemyPosition)")
+        //            if enemyPosition < 0 {
+        //                enemyPosition = (tiles?.count)! - 1
+        //            }
+        //
+        //            if enemyPosition < (tiles?.count)! && enemyPosition >= 0{
+        //                otherPlayers?[enemyPosition].image = nil
+        //            }
+        
+        //reset i back to its initial position + 1
+        //            playerLocation += 1
+        //            if playerLocation > tileCount  {
+        //                playerLocation = 0
+        //            }
+        //            i = playerLocation
+        //var tileOffset:Int
+        //            enemyPosition -= 1
+        if enemyPosition < 0 {
+            enemyPosition = tileCount
+        }
+        //            if otherPlayer > playerLocation{
+        //                tileOffset = otherPlayer - playerLocation + 2
+        //            }
+        //            else if otherPlayer < playerLocation {
+        //                tileOffset = playerLocation - otherPlayer + 2
+        //            } else{
+        //                tileOffset = 2
+        //            }
+        
+        for player in otherPlayers!{
+            player.image = nil
+            
+        }
+        
+        print(enemyPosition)
+        // print(otherPlayer)
+        //print(playerLocation)
+        
+        if 0 <= enemyPosition && enemyPosition < 5{
+            otherPlayers?[enemyPosition].image = UIImage(named: "Giant.png")
+        }
+
     }
     
     override func viewDidLoad() {
