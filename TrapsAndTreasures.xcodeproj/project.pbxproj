@@ -12,6 +12,8 @@
 		EB62ABCA1EB2C44E004FC1AC /* blockTile3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB62ABC91EB2C44E004FC1AC /* blockTile3.jpg */; };
 		EB62ABCC1EB2C457004FC1AC /* blockTile4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB62ABCB1EB2C457004FC1AC /* blockTile4.jpg */; };
 		EB62ABCE1EB2C45E004FC1AC /* blockTile5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB62ABCD1EB2C45E004FC1AC /* blockTile5.jpg */; };
+		EB6EE4F61EDA291E007A69E4 /* Elf.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EE4F51EDA291E007A69E4 /* Elf.png */; };
+		EB6EE4F81EDA2972007A69E4 /* Werewitch.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6EE4F71EDA2972007A69E4 /* Werewitch.png */; };
 		EBC5E1641EABEF5E0079A7CF /* blockTile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBC5E1631EABEF5E0079A7CF /* blockTile.jpg */; };
 		EBC5E1671EABF49F0079A7CF /* Giant.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC5E1661EABF49F0079A7CF /* Giant.png */; };
 		F289672E1EA6C298004CE8F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289672D1EA6C298004CE8F3 /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 		EB62ABC91EB2C44E004FC1AC /* blockTile3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blockTile3.jpg; sourceTree = "<group>"; };
 		EB62ABCB1EB2C457004FC1AC /* blockTile4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blockTile4.jpg; sourceTree = "<group>"; };
 		EB62ABCD1EB2C45E004FC1AC /* blockTile5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blockTile5.jpg; sourceTree = "<group>"; };
+		EB6EE4F51EDA291E007A69E4 /* Elf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Elf.png; path = ../../../../../../Downloads/Elf.png; sourceTree = "<group>"; };
+		EB6EE4F71EDA2972007A69E4 /* Werewitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Werewitch.png; path = ../../../../../../Downloads/Werewitch.png; sourceTree = "<group>"; };
 		EBC5E1631EABEF5E0079A7CF /* blockTile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blockTile.jpg; sourceTree = "<group>"; };
 		EBC5E1661EABF49F0079A7CF /* Giant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Giant.png; sourceTree = "<group>"; };
 		F289672A1EA6C298004CE8F3 /* TrapsAndTreasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrapsAndTreasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,8 @@
 		EBC5E1651EABF0250079A7CF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EB6EE4F71EDA2972007A69E4 /* Werewitch.png */,
+				EB6EE4F51EDA291E007A69E4 /* Elf.png */,
 				EB62ABCD1EB2C45E004FC1AC /* blockTile5.jpg */,
 				EB62ABCB1EB2C457004FC1AC /* blockTile4.jpg */,
 				EB62ABC91EB2C44E004FC1AC /* blockTile3.jpg */,
@@ -196,7 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB62ABCA1EB2C44E004FC1AC /* blockTile3.jpg in Resources */,
+				EB6EE4F61EDA291E007A69E4 /* Elf.png in Resources */,
 				EBC5E1671EABF49F0079A7CF /* Giant.png in Resources */,
+				EB6EE4F81EDA2972007A69E4 /* Werewitch.png in Resources */,
 				EB62ABCC1EB2C457004FC1AC /* blockTile4.jpg in Resources */,
 				F28967381EA6C298004CE8F3 /* LaunchScreen.storyboard in Resources */,
 				EB62ABC81EB2C445004FC1AC /* blockTile2.jpg in Resources */,

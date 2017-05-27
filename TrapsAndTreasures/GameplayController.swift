@@ -23,12 +23,16 @@ let pusher = Pusher(
 
 class GameplayController: UIViewController {
     var playerLocation = 0
-    var otherPlayer = 1;
+    var otherPlayer = 1
+    var secondPlayer = 2
+    var otherPlayerName = "Jeff"
+    var secondPlayerName = "Bill"
     var i = 0
     public var movement = 0
     var traps = 2
     var firstMoveCommpensation = false
     var imageHolder = [UIImage]()
+    var otherPlayerPositions: [String: Int] = [:]
 
     
     let image1 = UIImage(named: "blockTile.jpg")!
@@ -173,47 +177,25 @@ class GameplayController: UIViewController {
         movement -= 1
     }
     func adjustOtherPlayersPosition(tileCount: Int){
-        var enemyPosition = otherPlayer - playerLocation + 2
-        //            print("enemyPos: \(enemyPosition)")
-        //            if enemyPosition < 0 {
-        //                enemyPosition = (tiles?.count)! - 1
-        //            }
-        //
-        //            if enemyPosition < (tiles?.count)! && enemyPosition >= 0{
-        //                otherPlayers?[enemyPosition].image = nil
-        //            }
-        
-        //reset i back to its initial position + 1
-        //            playerLocation += 1
-        //            if playerLocation > tileCount  {
-        //                playerLocation = 0
-        //            }
-        //            i = playerLocation
-        //var tileOffset:Int
-        //            enemyPosition -= 1
-        if enemyPosition < 0 {
-            enemyPosition = tileCount
-        }
-        //            if otherPlayer > playerLocation{
-        //                tileOffset = otherPlayer - playerLocation + 2
-        //            }
-        //            else if otherPlayer < playerLocation {
-        //                tileOffset = playerLocation - otherPlayer + 2
-        //            } else{
-        //                tileOffset = 2
-        //            }
-        
         for player in otherPlayers!{
             player.image = nil
             
         }
+
+        for player in otherPlayerPositions{
+            var enemyPosition = player.value - playerLocation + 2
+                if enemyPosition < 0 {
+                    enemyPosition = tileCount
+                }
         
-        print(enemyPosition)
-        // print(otherPlayer)
-        //print(playerLocation)
-        
-        if 0 <= enemyPosition && enemyPosition < 5{
-            otherPlayers?[enemyPosition].image = UIImage(named: "Giant.png")
+    
+            print(enemyPosition)
+            // print(otherPlayer)
+            //print(playerLocation)
+            
+            if 0 <= enemyPosition && enemyPosition < 5{
+                otherPlayers?[enemyPosition].image = UIImage(named: "Werewitch.png")
+            }
         }
 
     }
@@ -228,6 +210,8 @@ class GameplayController: UIViewController {
         imageHolder.append(UIImage(named: "blockTile3.jpg")!)
         imageHolder.append(UIImage(named: "blockTile4.jpg")!)
         imageHolder.append(UIImage(named: "blockTile5.jpg")!)
+        otherPlayerPositions[otherPlayerName] = otherPlayer
+        otherPlayerPositions[secondPlayerName] = secondPlayer
         
         // subscribe to channel and bind to event
         let channel = pusher.subscribe("my-channel")
