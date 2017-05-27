@@ -170,7 +170,7 @@ class GameplayController: UIViewController {
         for tile in tiles!{
             tile.image = imageHolder[i]
             i += 1
-            if i > 4 {
+            if i > tileCount{
                 i = 0
             }
         }
@@ -200,7 +200,7 @@ class GameplayController: UIViewController {
             // print(otherPlayer)
             //print(playerLocation)
             
-            if 0 <= enemyPosition && enemyPosition < 5{
+            if 0 <= enemyPosition && enemyPosition < tileCount + 1{
                 otherPlayers?[enemyPosition].image = UIImage(named: "Werewitch.png")
             }
         }
